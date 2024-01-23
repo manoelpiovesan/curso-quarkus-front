@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quarkus_front/components/transaction_operations_menu.dart';
+import 'package:quarkus_front/enums/statuspix_enum.dart';
 import 'package:quarkus_front/models/transaction_model.dart';
 import 'package:quarkus_front/utils/config.dart';
 
@@ -49,7 +50,14 @@ class _TransactionDetailsState extends State<TransactionDetails> {
                     subtitle: Text(widget.transaction.linha),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.check_circle),
+                    leading: Icon(
+                      StatusPixConverter.icon(
+                        widget.transaction.statusPix,
+                      ),
+                      color: StatusPixConverter.color(
+                        widget.transaction.statusPix,
+                      ),
+                    ),
                     title: const Text('Status'),
                     subtitle: Text(
                       widget.transaction.statusPix.name,

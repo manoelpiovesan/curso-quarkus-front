@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quarkus_front/consumers/transaction_consumer.dart';
+import 'package:quarkus_front/enums/statuspix_enum.dart';
 import 'package:quarkus_front/models/transaction_model.dart';
 import 'package:quarkus_front/views/transaction_details.dart';
 
@@ -26,7 +27,7 @@ class _TransactionListState extends State<TransactionList> {
               return ListTile(
                 title: Text(snapshot.data![index].chave),
                 subtitle: Text(snapshot.data![index].data),
-                leading: const Icon(Icons.pix),
+                leading:  Icon(Icons.pix, color: StatusPixConverter.color(snapshot.data![index].statusPix),),
                 onTap: () async{
                   await Navigator.push(
                     context,

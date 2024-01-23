@@ -18,6 +18,7 @@ class _TransactionOperationsMenuState extends State<TransactionOperationsMenu> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         ElevatedButton(
           style: ButtonStyle(
@@ -38,6 +39,27 @@ class _TransactionOperationsMenuState extends State<TransactionOperationsMenu> {
             ),
           ),
         ),
+        const SizedBox(width: 20),
+        ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+                MaterialStateProperty.all<Color>(Colors.red.shade800),
+          ),
+          onPressed: reprove,
+          child: const Padding(
+            padding: EdgeInsets.all(8),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Icon(Icons.close),
+                SizedBox(
+                  width: 5,
+                ),
+                Text('Reprovar'),
+              ],
+            ),
+          ),
+        ),
       ],
     );
   }
@@ -45,7 +67,14 @@ class _TransactionOperationsMenuState extends State<TransactionOperationsMenu> {
   Future<bool> approve() async {
     bool response =
         await _transactionConsumer.approveTransaction(widget.transaction.id);
-    setState(() {});
+    Navigator.pop(context);
+    return response;
+  }
+
+  Future<bool> reprove() async {
+    bool response =
+        await _transactionConsumer.reproveTransaction(widget.transaction.id);
+    Navigator.pop(context);
     return response;
   }
 }

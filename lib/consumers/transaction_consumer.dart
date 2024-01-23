@@ -46,4 +46,21 @@ class TransactionConsumer {
 
     return false;
   }
+
+  ///
+  ///
+  ///
+  Future<bool> reproveTransaction(String id) async {
+    http.Response response = await http.delete(
+      Uri.parse(
+        '${Config.backUri}/v1/pix/$id/reprovar',
+      ),
+    );
+
+    if (response.statusCode == 200) {
+      return true;
+    }
+
+    return false;
+  }
 }
