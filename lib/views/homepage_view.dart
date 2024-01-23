@@ -35,5 +35,7 @@ class _HomepageViewState extends State<HomepageView> {
     );
   }
 
-
+  void refresh() {
+    setState(() {});
+  }
 }
