@@ -1,3 +1,4 @@
+// ignore_for_file: constant_identifier_names
 ///
 ///
 ///
@@ -58,8 +59,6 @@ class StatusPixConverter {
         return 'UNDONE';
       case StatusPix.CANCELED:
         return 'CANCELED';
-      default:
-        return 'CREATED';
     }
   }
 }

@@ -13,10 +13,8 @@ class _HomepageViewState extends State<HomepageView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          IconButton(
-              onPressed: refresh,
-              icon: const Icon(Icons.refresh)),
+        actions: <Widget>[
+          IconButton(onPressed: refresh, icon: const Icon(Icons.refresh)),
         ],
         title: const Text('Transactions'),
       ),
