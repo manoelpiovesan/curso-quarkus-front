@@ -29,4 +29,21 @@ class TransactionConsumer {
 
     throw Exception('Failed to load transactions');
   }
+
+  ///
+  ///
+  ///
+  Future<bool> approveTransaction(String id) async {
+    http.Response response = await http.patch(
+      Uri.parse(
+        '${Config.backUri}/v1/pix/$id/aprovar',
+      ),
+    );
+
+    if (response.statusCode == 200) {
+      return true;
+    }
+
+    return false;
+  }
 }

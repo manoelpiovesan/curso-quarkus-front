@@ -3,6 +3,8 @@
 ///
 ///
 enum StatusPix {
+  UNDEFINED, //Status não definido.
+
   CREATED, //Transação criada, não finalizada.
 
   IN_PROCESS, //Transação em processo, não finalizada.
@@ -39,7 +41,7 @@ class StatusPixConverter {
       case 'CANCELED':
         return StatusPix.CANCELED;
       default:
-        return StatusPix.CREATED;
+        return StatusPix.UNDEFINED;
     }
   }
 
@@ -59,6 +61,8 @@ class StatusPixConverter {
         return 'UNDONE';
       case StatusPix.CANCELED:
         return 'CANCELED';
+      case StatusPix.UNDEFINED:
+        return 'UNDEFINED';
     }
   }
 }
