@@ -3,4 +3,7 @@ class Config {
 
   static final String transactionListPath =
       <String>['v1', 'pix', 'transacoes'].join('/');
+
+  static final String transactionCreatePath =
+      <String>['v1', 'pix', 'linha'].join('/');
 }
