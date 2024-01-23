@@ -28,6 +28,11 @@ class _TransactionDetailsState extends State<TransactionDetails> {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   ListTile(
+                    leading: const Icon(Icons.tag),
+                    title: const Text('ID'),
+                    subtitle: Text(widget.transaction.id),
+                  ),
+                  ListTile(
                     leading: const Icon(Icons.key),
                     title: Text(
                       'Chave (${widget.transaction.tipoChave.name})',
