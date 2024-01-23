@@ -13,9 +13,18 @@ class _HomepageViewState extends State<HomepageView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Quarkus front'),
+        actions: [
+          IconButton(
+              onPressed: refresh,
+              icon: const Icon(Icons.refresh)),
+        ],
+        title: const Text('Transactions'),
       ),
       body: const TransactionList(),
     );
+  }
+
+  void refresh() {
+    setState(() {});
   }
 }

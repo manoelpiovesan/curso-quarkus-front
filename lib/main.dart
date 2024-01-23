@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quarkus_front/utils/config.dart';
 import 'package:quarkus_front/views/homepage_view.dart';
 
 void main() {
