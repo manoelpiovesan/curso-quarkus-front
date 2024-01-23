@@ -11,9 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Quarkus front',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: const Color(0xFF1A237E),
+          secondary: const Color(0xFF1A237E),
+        ),
         useMaterial3: false,
       ),
       home: const HomepageView(),
