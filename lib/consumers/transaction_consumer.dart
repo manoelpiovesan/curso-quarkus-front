@@ -11,6 +11,37 @@ class TransactionConsumer {
   ///
   ///
   ///
+  Future<String?> create(
+      String chave, int valor, String cidadeRemetente) async {
+    http.Response response = await http.post(
+      Uri.parse(
+        '${Config.backUri}${Config.transactionCreatePath}',
+      ),
+      body: jsonEncode(<String, dynamic>{
+        'chave': chave,
+        'valor': valor,
+        'cidadeRemetente': cidadeRemetente,
+      }),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+    );
+
+    if (response.statusCode == 200) {
+      Map<String, dynamic> body = json.decode(response.body);
+
+      if (body.containsKey('uuid')) {
+        return body['uuid'];
+      }
+
+      return null;
+    }
+    return null;
+  }
+
+  ///
+  ///
+  ///
   Future<List<Transaction>> list() async {
     http.Response response = await http.get(
       Uri.parse(
