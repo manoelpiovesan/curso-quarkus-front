@@ -33,7 +33,7 @@ class Transaction {
         linha = json['linha'],
         data = json['data'],
         valor = json['valor'],
-        statusPix = StatusPixConverter.fromString(json['tipoChave']);
+        statusPix = StatusPixConverter.fromString(json['status']);
 
   ///
   ///
