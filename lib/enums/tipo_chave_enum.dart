@@ -1,8 +1,13 @@
+// ignore_for_file: constant_identifier_names
+
 ///
 ///
 ///
 enum TipoChave {
-  CPF, CNPJ, EMAIL, TELEFONE;
+  CPF,
+  CNPJ,
+  EMAIL,
+  TELEFONE;
 }
 
 ///
@@ -23,6 +28,7 @@ class TipoChaveConverter {
         return TipoChave.CPF;
     }
   }
+
   static String toText(TipoChave tipoChave) {
     switch (tipoChave) {
       case TipoChave.CPF:
@@ -33,8 +39,6 @@ class TipoChaveConverter {
         return 'EMAIL';
       case TipoChave.TELEFONE:
         return 'TELEFONE';
-      default:
-        return 'CPF';
     }
   }
 }

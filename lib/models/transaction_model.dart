@@ -1,5 +1,5 @@
-import '../enums/statuspix_enum.dart';
-import '../enums/tipo_chave_enum.dart';
+import 'package:quarkus_front/enums/statuspix_enum.dart';
+import 'package:quarkus_front/enums/tipo_chave_enum.dart';
 
 class Transaction {
   final String id;
@@ -38,7 +38,7 @@ class Transaction {
   ///
   ///
   ///
-  Map<String, dynamic> toMap() => {
+  Map<String, dynamic> toMap() => <String, dynamic>{
         'id': id,
         'tipoChave': tipoChave,
         'chave': chave,
